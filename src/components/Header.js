@@ -1,5 +1,6 @@
 import {useEffect, useRef} from 'react';
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from 'react-scroll'
 
 const Header = () => {
     //scroll navbar
@@ -35,23 +36,27 @@ const Header = () => {
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link to="#about" className="nav-link">About</Link>
+                            <ScrollLink to="about" className="nav-link" offset={-86}>About</ScrollLink>
                         </li>
                         <li className="nav-item">
-                            <Link to="#experience" className="nav-link">Experience</Link>
+                            <ScrollLink to="experience" className="nav-link" offset={-86}>Experience</ScrollLink>
                         </li>
                         <li className="nav-item">
-                            <Link to="#athletics" className="nav-link">Athletics</Link>
+                            <ScrollLink to="athletics" className="nav-link" offset={-86}>Athletics</ScrollLink>
                         </li>
                         <li className="nav-item">
-                            <Link to="#contact" className="nav-link">Contact</Link>
+                            <ScrollLink to="contact" className="nav-link" offset={-86}>Contact</ScrollLink>
                         </li>
                         </ul>
                     </div>
                     </nav>
                 </div>
             </header>
-            <Link ref={backToTopRef} to="/" className="back-to-top d-flex align-items-center justify-content-center"><i className="fas fa-arrow-up"></i></Link>
+            <ScrollLink to="hero">
+                <div ref={backToTopRef} className="back-to-top d-flex align-items-center justify-content-center">
+                    <i className="fas fa-arrow-up" />
+                </div>
+            </ScrollLink>
         </>
     );
 };
