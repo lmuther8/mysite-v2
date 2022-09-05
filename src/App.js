@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./pages/layout";
 import Home from "./pages/home";
+import Resume from "./pages/Resume";
 
 function App() {
   return (
@@ -11,10 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} /> */}
         </Route>
+        <Route path="/resume/" element={<Resume/>} />
       </Routes>
     </BrowserRouter>
   );
