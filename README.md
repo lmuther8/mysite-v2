@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# My Personal Website v2
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/61ff59d7-6a41-40d6-87aa-f7baf1d7b791/deploy-status)](https://app.netlify.com/sites/fastidious-druid-1ee68d/deploys)
+
+This website is hosted on [Netlify](https://www.netlify.com/). 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
