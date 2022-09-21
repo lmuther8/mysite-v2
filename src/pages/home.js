@@ -10,10 +10,10 @@ const Home = () => {
                     <h1>Luke Muther</h1>
                     <p>Student, Soccer Player, Software Developer</p>
                     <ul className="list-unstyled hero-social">
-                    <li><Link to="https://www.linkedin.com/in/lukemuther/" target="_blank"><i className="fab fa-linkedin"></i></Link></li>
-                    <li><Link to="https://github.com/lmuther8" target="_blank"><i className="fab fa-github"></i></Link></li>
-                    <li><Link to="https://www.facebook.com/luke.muther/" target="_blank"><i className="fab fa-facebook"></i></Link></li>
-                    <li><Link to="https://www.instagram.com/lmutes8/" target="_blank"><i className="fab fa-instagram"></i></Link></li>
+                    <li><a href="https://www.linkedin.com/in/lukemuther/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/lmuther8" target="_blank" rel="noreferrer"><i className="fab fa-github"></i></a></li>
+                    <li><a href="https://www.facebook.com/luke.muther/" target="_blank" rel="noreferrer"><i className="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/lmutes8/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
                 </div>
@@ -26,7 +26,7 @@ const Home = () => {
           <div className="col-lg-4">
             <div className="about-img-bg">
               <div className="about-img">
-                <img src="assets/me.jpeg" alt="Pictue of Luke Muther"></img>
+                <img src="assets/me.jpeg" alt="Luke Muther"></img>
               </div>
             </div>
           </div>

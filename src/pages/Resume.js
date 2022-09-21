@@ -4,9 +4,12 @@ import LukeMutherResume from '../LukeMutherResume.pdf'
 
 const Resume = () => {
     return (
-        <Document file={LukeMutherResume} size='LETTER'>
-            <Page pageNumber={1} size='LEGAL'/>
-        </Document>
+        <>
+            <Document file={LukeMutherResume} style={{margin:"inherit", width:"inherit", height:"inherit"}}>
+                <Page pageNumber={1}/>
+            </Document>
+        </>
+        
     )
 }
 
