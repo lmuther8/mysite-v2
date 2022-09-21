@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Home = () => {
     return (
         <div>
@@ -24,7 +26,7 @@ const Home = () => {
           <div className="col-lg-4">
             <div className="about-img-bg">
               <div className="about-img">
-                <img src="assets/me.jpeg" alt="Luke Muther"></img>
+                <img src="assets/me.webp" alt="Luke Muther"></img>
               </div>
             </div>
           </div>
@@ -108,9 +110,9 @@ const Home = () => {
       </div>
 
       <div className="container text-center mb-5">
-        <a href="/resume">
+        <Link to="resume/">
           <button><i className="fas fa-file-export"></i>My Resume</button>
-        </a>
+        </Link>
       </div>
     </section>
 
@@ -201,16 +203,16 @@ const Home = () => {
               </div>
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img src="assets/soccer1.JPG" className="d-block w-100" alt="Luke Muther playing soccer."></img>
+                  <img src="assets/soccer1.webp" className="d-block w-100" alt="Luke Muther playing soccer."></img>
                 </div>
                 <div className="carousel-item">
-                  <img src="assets/soccer2.JPG" className="d-block w-100" alt="Luke Muther playing soccer."></img>
+                  <img src="assets/soccer2.webp" className="d-block w-100" alt="Luke Muther playing soccer."></img>
                 </div>
                 <div className="carousel-item">
-                  <img src="assets/soccer3.JPG" className="d-block w-100" alt="Luke Muther playing soccer."></img>
+                  <img src="assets/soccer3.webp" className="d-block w-100" alt="Luke Muther playing soccer."></img>
                 </div>
                 <div className="carousel-item">
-                  <img src="assets/soccer4.JPG" className="d-block w-100" alt="Luke Muther playing soccer."></img>
+                  <img src="assets/soccer4.webp" className="d-block w-100" alt="Luke Muther playing soccer."></img>
                 </div>
               </div>
             </div>

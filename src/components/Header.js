@@ -8,7 +8,6 @@ const Header = () => {
     const backToTopRef = useRef();
     useEffect(() => {
         const handleScroll = event => {
-            console.log(headerRef.className)
             if (window.scrollY>40) {
                 headerRef.current.className = 'fixed-top header-scrolled';
                 backToTopRef.current.className = 'active back-to-top d-flex align-items-center justify-content-center'
