@@ -12,6 +12,12 @@ const Home = () => {
     var email = document.getElementById('email').value.trim();
     var subj = document.getElementById('subject').value.trim();
     var message = document.getElementById('message').value.trim();
+    console.log({
+        "name": name,
+        "email": email,
+        "subject": subj,
+        "message": message
+    })
     e.preventDefault();
     $.ajax({
       type: 'POST',
