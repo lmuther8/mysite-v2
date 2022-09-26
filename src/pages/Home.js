@@ -1,24 +1,63 @@
 import { Link } from "react-router-dom";
+import {useRef} from 'react';
+import $ from 'jquery';
 
 const Home = () => {
-    return (
-        <div>
-            <section id="hero" className="mb-5">
-            <div className="hero">
-                <div className="container d-flex align-items-center">
-                <div className="hero-content">
-                    <h1>Luke Muther</h1>
-                    <p>Student, Soccer Player, Software Developer</p>
-                    <ul className="list-unstyled hero-social">
-                    <li><a href="https://www.linkedin.com/in/lukemuther/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a></li>
-                    <li><a href="https://github.com/lmuther8" target="_blank" rel="noreferrer"><i className="fab fa-github"></i></a></li>
-                    <li><a href="https://www.facebook.com/luke.muther/" target="_blank" rel="noreferrer"><i className="fab fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/lmutes8/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-                </div>
+  const contactSuccessRef = useRef();
+  const contactFailRef = useRef();
+  const emailFormRef = useRef();
+
+  // contactSuccessRef.current.style.display = "none"
+  
+  const submitForm = (e) => {
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var subj = document.getElementById('subject').value.trim();
+    var message = document.getElementById('message').value.trim();
+    // e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: 'https://vtt2m6ejlh4j2zfdxqa5aknyla0txwxs.lambda-url.us-east-1.on.aws/',
+      processData: false,
+      contentType: 'application/json',
+      data: JSON.stringify({
+          "name": name,
+          "email": email,
+          "subject": subj,
+          "message": message
+      }),
+      dataType: 'json',
+      success: function (response) {
+          if (response.type !== 'error') {
+            emailFormRef.current.style.display = "none"
+            contactSuccessRef.current.style.display="flex"
+          }
+      },
+      error: function () {
+        emailFormRef.current.style.display = "none"
+        contactFailRef.current.style.display="block"
+      }
+    })
+  };
+
+  return (
+    <div>
+        <section id="hero" className="mb-5">
+        <div className="hero">
+            <div className="container d-flex align-items-center">
+            <div className="hero-content">
+                <h1>Luke Muther</h1>
+                <p>Student, Soccer Player, Software Developer</p>
+                <ul className="list-unstyled hero-social">
+                <li><a href="https://www.linkedin.com/in/lukemuther/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/lmuther8" target="_blank" rel="noreferrer"><i className="fab fa-github"></i></a></li>
+                <li><a href="https://www.facebook.com/luke.muther/" target="_blank" rel="noreferrer"><i className="fab fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/lmutes8/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a></li>
+                </ul>
             </div>
-            </section>
+            </div>
+        </div>
+        </section>
 
     <section id="about" className="py-5">
       <div className="container">
@@ -225,9 +264,9 @@ const Home = () => {
       <div className="container">
         <div className="row">
           <h1 className="text-center mb-3">GET IN TOUCH</h1>
-          <h2 id="success" className="text-center my-auto">Message Sent!</h2>
-          <h2 id="failure">Message Failed To Send</h2>
-          <form id="contact-form">
+          <h2 ref={contactSuccessRef} className="text-center my-auto" style={{"display":"none"}}>Message Sent!</h2>
+          <h2 ref={contactFailRef} className="text-center my-auto" style={{"display":"none"}}>Message Failed To Send</h2>
+          <form ref={emailFormRef}>
             <div className="row justify-content-center">
               <div className="col-lg-4">
                 <div className="form-group contact-block1">
@@ -252,7 +291,7 @@ const Home = () => {
             </div>
             <div className="row justify-content-center">
               <div className="col-lg-4 d-flex justify-content-center">
-                <button className="contact-btn">SEND</button>
+                <button onClick={submitForm} className="contact-btn">SEND</button>
               </div>
             </div>
           </form>
