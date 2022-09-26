@@ -6,15 +6,13 @@ const Home = () => {
   const contactSuccessRef = useRef();
   const contactFailRef = useRef();
   const emailFormRef = useRef();
-
-  // contactSuccessRef.current.style.display = "none"
   
   const submitForm = (e) => {
     var name = document.getElementById('name').value.trim();
     var email = document.getElementById('email').value.trim();
     var subj = document.getElementById('subject').value.trim();
     var message = document.getElementById('message').value.trim();
-    // e.preventDefault();
+    e.preventDefault();
     $.ajax({
       type: 'POST',
       url: 'https://vtt2m6ejlh4j2zfdxqa5aknyla0txwxs.lambda-url.us-east-1.on.aws/',
