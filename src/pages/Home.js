@@ -25,10 +25,10 @@ const Home = () => {
       processData: false,
       contentType: 'application/json',
       data: JSON.stringify({
-          "name": name,
-          "email": email,
-          "subject": subj,
-          "message": message
+          name: name,
+          email: email,
+          subject: subj,
+          message: message
       }),
       dataType: 'json',
       success: function (response) {
