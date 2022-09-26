@@ -12,16 +12,12 @@ const Home = () => {
     var email = document.getElementById('email').value.trim();
     var subj = document.getElementById('subject').value.trim();
     var message = document.getElementById('message').value.trim();
-    console.log({
-        "name": name,
-        "email": email,
-        "subject": subj,
-        "message": message
-    })
     e.preventDefault();
+
     $.ajax({
       type: 'POST',
       url: 'https://vtt2m6ejlh4j2zfdxqa5aknyla0txwxs.lambda-url.us-east-1.on.aws/',
+      crossDomain: true,
       processData: false,
       contentType: 'application/json',
       data: JSON.stringify({
